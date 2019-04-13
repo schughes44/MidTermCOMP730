@@ -1,5 +1,9 @@
 package Question3InterfaceAbstract;
 
-public class BakedGoods {
-
+public interface BakedGoods {
+	public int getPrice();
+	public String getDescription();
+	public String getSellByDate();
 }
+
+
