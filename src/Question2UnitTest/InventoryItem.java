@@ -9,10 +9,10 @@ public class InventoryItem {
 	// String n, int countOfItems) {type = t;weight = w;name = n;
 	
 	public InventoryItem(String t, int w, String n, int countOfItems) {
-		this.type = t;
-		this.weight = w;
-		this.name = n;
-		this.count = countOfItems;
+		type = t;
+		weight = w;
+		name = n;
+		count = countOfItems;
 	}
 
 	public String getName() {
@@ -37,6 +37,7 @@ public class InventoryItem {
 		if (count > 1) {
 			ret += ", there are " + count + " left";
 		}
-		return name;
+		return ret;
+		//changed variable to return ret instead of name
 	}
 }

@@ -19,33 +19,29 @@ class TestInventory {
 	
 	@Mock
 	private InventoryItem item;
+	private InventoryItem item2;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		 
+		inventory = new Inventory();
+		spyInventory = spy(new Inventory()); //spy object
+		item = mock(InventoryItem.class); //mock object
+		item2= mock(InventoryItem.class); //mock object
 	}
 	
 	@AfterEach
 	void tearDown() throws Exception {
 		inventory = null;
-		//spyInventory = null;
+		spyInventory = null;
 		item = null;
 	}
 	
 	@Test
-	void test_inventory_getCount() {
-		item = new InventoryItem("Furniture", 100, "Chair", 1);
-		inventory = mock(Inventory.class);
-		inventory.addItemToInventory(item);
-		Mockito.verify(inventory).addItemToInventory(item);
-		assertEquals(0, inventory.getCount());
-	}
-	
-	@Test
-	void test_inventory_addItemToInventory() {
+	void test_inventory_addItemToInventory_spy() {
 		Inventory spyInventory = Mockito.spy(new Inventory());
 		spyInventory.addItemToInventory(item);
+		spyInventory.addItemToInventory(item2);
 		Mockito.verify(spyInventory).addItemToInventory(item);
-		assertEquals(1, spyInventory.getCount());
+		assertEquals(2, spyInventory.getCount(), "The item count is incorrect");
 	}
 }
