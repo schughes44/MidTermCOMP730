@@ -1,14 +1,17 @@
 package Question4DesignPattern2;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MoveMain {
 
 	public static void main(String[] args) {
 		
 		Player player = new Player(0, 0);
 		CommandInvoker command = new CommandInvoker();
+		int random;
 		
 		for (int i = 0; i < 50; i++) {
-			int random = (int)(Math.random() * 5 +1);
+			random = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 			
 			if (random == 1) {
 				command.setDirection(new MoveNorth(player));
@@ -25,8 +28,11 @@ public class MoveMain {
 			if (random == 4) {
 				command.setDirection(new MoveWest(player));
 			}
+			
 			command.move();
+			
 		}
-		//command.undoMove();
+		System.out.println("\n" + "Undo Move");
+		command.undoMove();
 	}
 }

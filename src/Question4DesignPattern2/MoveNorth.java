@@ -14,7 +14,8 @@ public class MoveNorth implements CommandInterface {
 
 	@Override
 	public boolean undo() {
-		return false;
+		player.undoMove();
+		return true;
 	}
 
 }

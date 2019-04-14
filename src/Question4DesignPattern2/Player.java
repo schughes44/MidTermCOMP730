@@ -12,32 +12,28 @@ public class Player {
 	}
 	
 	public void movedNorth() {
-		xCoord = 1;
-		yCoord = 1;		
-		System.out.println("Player moved North at " + xCoord + " , " + yCoord + " coordinates");
+		yCoord = yCoord + 2;		
+		System.out.println("Player moved North at " + xCoord + "x" + " , " + yCoord + "y" + " coordinates");
 	}
 	
 	public void movedSouth() {
-		xCoord = 4;
-		yCoord = 4;
-		System.out.println("Player moved South at " + xCoord + " , " + yCoord + " coordinates");
+		yCoord = yCoord - 2;
+		System.out.println("Player moved South at " + xCoord + "x" + " , " + yCoord + "y" + " coordinates");
 	}
 	
 	public void movedWest() {
-		xCoord = 2;
-		yCoord = 2;
-		System.out.println("Player moved West at " + xCoord + " , " + yCoord + " coordinates");
+		xCoord = xCoord - 2;
+		System.out.println("Player moved West at " + xCoord + "x" + " , " + yCoord + "y" + " coordinates");
 	}
 	
 	public void movedEast() {
-		xCoord = 3;
-		yCoord = 3;
-		System.out.println("Player moved East at " + xCoord + " , " + yCoord + " coordinates");
+		xCoord = xCoord + 2;
+		System.out.println("Player moved East at " + xCoord + "x" + " , " + yCoord + "y" + " coordinates");
 	}
 	
 	public void undoMove() {
 		xCoord = 0;
 		yCoord = 0;
-		System.out.println("I moved back to coordinates " + xCoord + " , " + yCoord);
+		System.out.println("Player moved back to coordinates " + xCoord + "x" + " , " + yCoord + "y");
 	}
 }

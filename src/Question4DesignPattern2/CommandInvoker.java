@@ -9,17 +9,14 @@ public class CommandInvoker {
 	}
 
 	public void setDirection(CommandInterface command) {
-
 		slot = command;
 	}
 
 	public void move() {
-
 		slot.execute();
 	}
 
 	public void undoMove() {
-
 		slot.undo();
 	}
 }

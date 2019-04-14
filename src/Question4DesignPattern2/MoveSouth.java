@@ -9,12 +9,13 @@ public class MoveSouth implements CommandInterface {
 	
 	@Override
 	public void execute() {
-		player.movedNorth();
+		player.movedSouth();
 	}
 
 	@Override
 	public boolean undo() {
-		return false;
+		player.undoMove();
+		return true;
 	}
 
 }
