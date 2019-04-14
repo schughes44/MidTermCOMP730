@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 
 class TestInventory {
-	private Inventory inventory;
 	
 	@Mock
 	private Inventory spyInventory;
@@ -23,7 +22,6 @@ class TestInventory {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		inventory = new Inventory();
 		spyInventory = spy(new Inventory()); //spy object
 		item = mock(InventoryItem.class); //mock object
 		item2= mock(InventoryItem.class); //mock object
@@ -31,7 +29,6 @@ class TestInventory {
 	
 	@AfterEach
 	void tearDown() throws Exception {
-		inventory = null;
 		spyInventory = null;
 		item = null;
 	}
