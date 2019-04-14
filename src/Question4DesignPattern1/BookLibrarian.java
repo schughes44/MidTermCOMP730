@@ -5,8 +5,9 @@ import java.util.List;
 
 
 public class BookLibrarian {
-	private List<BookInformation>  bookList= new ArrayList<BookInformation>();
-
+	private List<BookInformation> bookList= new ArrayList<BookInformation>();
+	private SortBook bookSort;
+	
 	public BookLibrarian() {
 		
 	}
@@ -23,10 +24,22 @@ public class BookLibrarian {
 		}
 		return false;
 	}
+	public void setSortMethod(SortBook bookSort) {
+		this.bookSort = bookSort;
+	}
 	
 	public void printList() {
+		List<BookInformation> sortedList;
+		
+		if (bookSort == null) {
+			sortedList = bookList;
+		}
+		
+		else {
+			sortedList = bookSort.sort(bookList);
+		}
 		for(BookInformation g : bookList ) {
-			System.out.println("Author: " + g.getAuthor() + "\n" + "Title: " + g.getTitle() + "\n" + "Year Published: " + g.getYear() + "\n" + "Summary: " + g.getSummary());
+			System.out.println("Author: " + g.getAuthor() + "\n" + "Title: " + g.getTitle() + "\n" + "Year Published: " + g.getYear() + "\n" + "Summary: " + g.getSummary() + "\n");
 		}
 	}
 }

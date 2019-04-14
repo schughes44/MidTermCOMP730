@@ -5,14 +5,14 @@ public class BookInformation {
 	private String title;
 	private int year;
 	private String summary;
-	private SortBook bookSort;
+	
 	
 
 	public BookInformation(String a, String t, int y, String s) {
-		this.author = a;
-		this.title = t;
-		this.year = y;
-		this.summary = s;
+		author = a;
+		title = t;
+		year = y;
+		summary = s;
 	}
 	
 	public String getAuthor() {
@@ -29,10 +29,6 @@ public class BookInformation {
 	
 	public String getSummary() {
 		return summary;
-	}
-
-	public void setSortMethod(SortBook sort) {
-		bookSort = sort;
 	}
 }
 
